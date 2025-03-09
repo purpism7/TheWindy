@@ -1,32 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace Creature
-{
-    public interface IController<T, V> where V : ISubject
-    {
-        T Initialize(V v);
-        void ChainUpdate();
-        void ChainLateUpdate();
-        void ChainFixedUpdate();
-        void Activate();
-        void Deactivate();
-    }
-
-    public abstract class Controller : MonoBehaviour
-    {
-        public bool IsActivate { get; private set; } = false;
-
-        public virtual void Activate()
-        {
-            IsActivate = true;
-        }
-        
-        public virtual void Deactivate()
-        {
-            IsActivate = false;
-        }
-    }
-}
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:be3ef888adb9141b14a146e4c17af0bf47ca5eae3df990fe1140b9d7bfa3a5ae
+size 667

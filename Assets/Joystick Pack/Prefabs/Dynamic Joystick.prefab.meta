@@ -1,14 +1,3 @@
-fileFormatVersion: 2
-guid: 56fae09712773584fb63896d473a98ee
-PrefabImporter:
-  externalObjects: {}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 107631
-  packageName: Joystick Pack
-  packageVersion: 2.1
-  assetPath: Assets/Joystick Pack/Prefabs/Dynamic Joystick.prefab
-  uploadId: 301683
+version https://git-lfs.github.com/spec/v1
+oid sha256:ee3ab37b90fda83d11940d42a1c6b95afefab68ed626979ee88bb9b6bf458bd7
+size 346

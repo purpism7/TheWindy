@@ -1,32 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace Creature.Action
-{
-    public class Idle : Act<Idle.Data>
-    {
-        public class Data : Act<Idle.Data>.Data
-        {
-            // public float DelaySec = 0;
-        }
-        
-        public override void Execute()
-        {
-            base.Execute();
-            
-            if (_data == null)
-                return;
-            
-            SetAnimation(_data.AnimationKey, true);
-
-            // if (_data != null)
-            //     _delaySec = _data.DelaySec;
-            // // else
-            // //     _delaySec = UnityEngine.Random.Range(5f, 10f);
-            //
-            // _currSec = 0;
-        }
-    }
-}
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:0f06056027a50a003e11a3238f9bd471f63431d60d089e0bf71b333527f47814
+size 719

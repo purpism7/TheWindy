@@ -1,20 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace UI.Part
-{
-    public class PartSpeechBubble : PartWorld<PartSpeechBubble.Data>
-    {
-        public class Data : PartWorld<PartSpeechBubble.Data>.Data
-        {
-            
-        }
-
-        public override void Initialize(Data data)
-        {
-            base.Initialize(data);
-        }
-    }
-}
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:12dd730c6ac4c5a8aba4b00c9d9303bf51fc23da8522129ef2f525712dcf9e1e
+size 390

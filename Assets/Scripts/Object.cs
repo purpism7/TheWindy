@@ -1,20 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Object : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        var spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        
-        spriteRenderer.sortingOrder = -(int)(transform.position.y * 100f);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:fb05cf196d70f032d43525b8617f268312a408cbcc173cd0bceaadf46c0ff0a9
+size 436

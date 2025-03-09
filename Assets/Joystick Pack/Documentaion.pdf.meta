@@ -1,14 +1,3 @@
-fileFormatVersion: 2
-guid: cfa813ed406827e43b967abd54ab5b9a
-DefaultImporter:
-  externalObjects: {}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 107631
-  packageName: Joystick Pack
-  packageVersion: 2.1
-  assetPath: Assets/Joystick Pack/Documentaion.pdf
-  uploadId: 301683
+version https://git-lfs.github.com/spec/v1
+oid sha256:d8bc6771eb08aca76d86b25c3cb80b65c2268d7f8824717d388b011e3fbab77b
+size 332

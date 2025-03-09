@@ -1,25 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-using Creature.Action;
-using UnityEngine.AI;
-
-namespace Creature
-{
-    public interface ISubject
-    {
-        int Id { get; }
-        Transform Transform { get; }
-        NavMeshAgent NavMeshAgent { get; }
-
-        bool IsActivate { get; }
-
-        void SortingOrder(float order);
-        void Flip(float x);
-
-        void SetEventHandler(System.Action<IActor> eventHandler);
-        System.Action<IActor> EventHandler { get; }
-    }
-}
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:cdee74c5d34316a3c9311dc4924831421b707a90383a8465733c5cdaf0224adc
+size 518

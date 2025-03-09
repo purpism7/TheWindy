@@ -1,21 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Creator;
-using UnityEngine;
-
-using Cysharp.Threading.Tasks;
-
-using GameSystem;
-using Creature;
-
-public class Game : MonoBehaviour
-{
-    private async UniTask Awake()
-    {
-        // MainManager.Instance
-        Debug.Log("Game Awake");
-        // await ResourceManager.Instance.InitializeAsync();
-
-        // UIManager.Create();
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:422c47ac729f36e95d452738d319ce8869da9774697c57056283d360eaf6b2cc
+size 403

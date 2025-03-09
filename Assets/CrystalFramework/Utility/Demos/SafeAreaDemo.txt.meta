@@ -1,14 +1,3 @@
-fileFormatVersion: 2
-guid: 1c5d0ac416e6c7847bc6fc71a0c41f8b
-TextScriptImporter:
-  externalObjects: {}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 130488
-  packageName: Safe Area Helper
-  packageVersion: 1.0.6
-  assetPath: Assets/CrystalFramework/Utility/Demos/SafeAreaDemo.txt
-  uploadId: 385285
+version https://git-lfs.github.com/spec/v1
+oid sha256:b950e637476ce5e2229ab48170a51302ab52b7a45a4cadd7a4a1a1f254384d23
+size 357

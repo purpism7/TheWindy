@@ -1,31 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-using Creature.Action;
-
-namespace Creature
-{
-    public class Monster : Character
-    {
-        
-        public override string AnimationKey<T>(Act<T> act)
-        {
-            switch (act)
-            {
-                case Idle: return "00_Idle";
-                case Move: return "02_Run";
-            }
-
-            return string.Empty;
-        }
-        
-        public override void Initialize()
-        {
-            base.Initialize();
-
-            IActCtr = transform.AddOrGetComponent<ActController>();
-            IActCtr?.Initialize(this);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:b7bfe8c04e3e59090831ce2e4efdecaf63c920b259dfee72134d09f8d3659a9b
+size 650
