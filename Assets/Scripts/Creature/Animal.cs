@@ -98,17 +98,13 @@ namespace Creature
             }
         }
 
-        void Act<Move.Data>.IListener.End()
-        {
-            Debug.Log("Act<Move.Data>.IListener.End()");
-            
-            RandomMoveAsync().Forget();
-        }
-        
         void Act<Interaction.Data>.IListener.End()
         {
-            Debug.Log("Act<Interaction.Data>.IListener.End()");
-            
+            RandomMoveAsync().Forget();
+        }
+
+        void Act<Move.Data>.IListener.End()
+        {
             RandomMoveAsync().Forget();
         }
     }

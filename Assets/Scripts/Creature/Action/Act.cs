@@ -25,13 +25,20 @@ namespace Creature.Action
         public class Data
         {
             public IListener IListener = null;
-            
+
             public string AnimationKey { get; private set; } = string.Empty;
-            
+            public bool NoEnd { get; private set; } = false;
+
             public Data SetAnimationKey(string key)
             {
                 AnimationKey = key;
 
+                return this;
+            }
+
+            public Data SetNoEnd(bool noEnd)
+            {
+                NoEnd = noEnd;
                 return this;
             }
         }
@@ -42,7 +49,7 @@ namespace Creature.Action
 
         private bool _update = false;
         private bool _end = false;
-        private System.Action _endAction = null;
+        private System.Action<bool> _endAction = null;
         
         public virtual void Initialize(IActor iActor)
         {
@@ -54,7 +61,7 @@ namespace Creature.Action
             if (_end)
                 return;
             
-            _endAction?.Invoke();
+            _endAction?.Invoke(_data.NoEnd);
             _data?.IListener?.End();
 
             _update = false;
@@ -66,7 +73,7 @@ namespace Creature.Action
             _data = data;
         }
 
-        public void SetEndActAction(System.Action endAction)
+        public void SetEndActAction(System.Action<bool> endAction)
         {
             _endAction = endAction;
         }

@@ -16,13 +16,13 @@ namespace Creature.Action
     {
         // void Idle();
         IActController MoveToTarget(Vector3? pos = null);
-        void Execute(); 
+        void Execute(bool noEnd = false); 
         UniTask AddActAsync<T, V>(V data = null) where T : Act<V>, new() where V : Act<V>.Data, new();
 
         IAct CurrIAct { get; }
         bool InAction { get; }
     }
-    
+        
     public class ActController : Controller, IActController
     {
         private IActor _iActor = null;
@@ -84,7 +84,7 @@ namespace Creature.Action
             base.Deactivate();
             
             _iActQueue?.Clear();
-            Idle();
+            Idle(false);
         }
         #endregion
             
@@ -123,16 +123,17 @@ namespace Creature.Action
         //     AddActAsync<Interaction, Interaction.Data>().Forget();
         // }
 
-        private async UniTask ExecuteAsync()
+        private async UniTask ExecuteAsync(bool noEnd)
         {
-            if (InAction)
-                await UniTask.Yield(PlayerLoopTiming.LastPostLateUpdate);
+            // if (InAction)
+            //     await UniTask.Yield(PlayerLoopTiming.LastPostLateUpdate);
             
             if (_iActQueue?.Count > 0)
             {
                 if (_iActQueue.TryDequeue(out IAct iAct))
                 {
-                    CurrIAct?.End();
+                    if(!noEnd)
+                        CurrIAct?.End();
                     // await UniTask.Yield();
                         
                     InAction = true;
@@ -147,17 +148,17 @@ namespace Creature.Action
                 }
             }
 
-            Idle();
+            Idle(true);
         }
 
-        public void Execute()
+        public void Execute(bool noEnd)
         {
-            ExecuteAsync().Forget();
+            ExecuteAsync(noEnd).Forget();
         }
 
-        private void Idle()
+        private void Idle(bool noEnd)
         {
-            Execute<Idle, Idle.Data>();
+            Execute<Idle, Idle.Data>(noEnd: noEnd);
             // SetCurrIAct(null);
             
             InAction = false;
@@ -217,28 +218,29 @@ namespace Creature.Action
             data.IListener = _iActor as Act<V>.IListener;
             
             var animationKey = _iActor?.AnimationKey(act);
-            Debug.Log(animationKey);
             data.SetAnimationKey(animationKey);
 
             return data;
         }
 
-        private void Execute<T, V>(V data = null) where T : Act<V>, new() where V : Act<V>.Data, new()
+        private void Execute<T, V>(V data = null, bool noEnd = false) where T : Act<V>, new() where V : Act<V>.Data, new()
         {
             var act = GetAct<T, V>();
             if (act == null)
                 return;
 
             data = GetData<V>(act, data);
+            data?.SetNoEnd(noEnd);
+            
             act.Execute();
             SetCurrIAct(act);
             
             act.ChainUpdateAsync().Forget();
         }
         
-        private void EndAct()
+        private void EndAct(bool noEnd)
         {
-            Execute();
+            Execute(noEnd);
         }
 
         private void SetCurrIAct(IAct iAct)
