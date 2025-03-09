@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 using Cysharp.Threading.Tasks;
+using UnityEditor.Rendering;
 using UnityEngine.UI;
 
 
@@ -132,7 +133,7 @@ namespace Creature.Action
                 if (_iActQueue.TryDequeue(out IAct iAct))
                 {
                     CurrIAct?.End();
-                    await UniTask.Yield();
+                    // await UniTask.Yield();
                         
                     InAction = true;
                     
@@ -216,6 +217,7 @@ namespace Creature.Action
             data.IListener = _iActor as Act<V>.IListener;
             
             var animationKey = _iActor?.AnimationKey(act);
+            Debug.Log(animationKey);
             data.SetAnimationKey(animationKey);
 
             return data;

@@ -48,7 +48,6 @@ namespace Creature.Action
         {
             _iActor = iActor;
         }
-
         
         public virtual void End()
         {
